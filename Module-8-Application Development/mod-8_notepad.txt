@@ -1,0 +1,55 @@
+if we have containerized application
+what options we have to run container application
+1)GKE
+2)Compute engine  -:  
+  a)container optimized os  deploy your application,run using docker commands
+  b)unbuntu . First install docker on this machine and then follow the docker images
+3)Cloud run  -Serverless option (focus on your application code) 
+
+
+Deployement of application on cloud run
+1)upload all the files on the cloud shell 
+2)build the application using docker command
+docker build -t cloud_run .
+3)tag your application image
+docker tag cloud_run gcr.io/<project_id>/cloud_run
+docker tag cloud_run gcr.io/qwiklabs-gcp-02-06aed01b5f95/cloud_run
+4)docker push gcr.io/<project_id>/cloud_run
+docker push gcr.io/qwiklabs-gcp-02-06aed01b5f95/cloud_run
+5)verify that image is present in the container registry
+6)go to cloud run and create service and select image from container registry and deploy
+7)Test your appliation (normal test that is from broswer,stress test from our python file)
+8)update the code to have some changes in file cloudrun.py
+9)Follow the same process of build ,tag and push
+10)update the service in cloud run
+docker build -t cloud_run_v1 .
+docker tag cloud_run_v1 gcr.io/qwiklabs-gcp-02-06aed01b5f95/cloud_run_v1
+docker push gcr.io/qwiklabs-gcp-02-06aed01b5f95/cloud_run_v1
+
+Canary deployment-test with few percent of users (10% ,20%,100)
+
+
+APP engine
+1)application code
+2)runtime -> python
+3)any dependicies 
+To deploy application in flexible
+env: flex     //in app.yaml
+
+Command to deploy application in app engine
+gcloud app deploy
+
+Cloud function -> Event based programming serverless 
+event type
+events -> HTTP url
+pub/sub -> 
+cloud storage -> 
+Firebase -> review 
+
+
+curl -m 70 -X POST https://us-central1-qwiklabs-gcp-00-49fcdb0ce78c.cloudfunctions.net/function-1 \
+-H "Authorization:bearer $(gcloud auth print-identity-token)" \
+-H "Content-Type:application/json" \
+-d '{"empid":123}'
+
+ 

@@ -1,0 +1,71 @@
+banking project
+1)Application code is running in VMS (instance template,instance groups,load balancers)
+
+2)custom network ,subnetworks,firewalls as per the project requirement
+3)IAM policy for permissions related,custom roles ,created service accounts
+4)cloud sql 
+5)big query 
+6)pub/sub 
+7)CI/CD pipeline
+8)cloud storage
+
+console ui  (web)
+cli (gcloud)
+API (create your resources)
+Error prune
+
+iaac tools
+we need to have a file ,that defines the structure of the resources
+
+
+Terraform (.tf)  
+init (initilising the terraform files)
+plan (blueprint of changes going to happen in console)
+apply (doing actual changes in the environment)
+clean everything from your project (terraform destroy)
+
+
+High level steps for our lab
+1)create a service account and give editor role to the service account
+2)download the key associated with the service account,put service account in your terraform lab folder and give the respective path in main.tf file
+3)terraform init
+4)put definition of custom network and subnetwork in main.tf file and then run following commands
+terraform plan
+terraform apply
+5)verfiy that custom network is created or not
+6)change the mtu paramter of vpc network
+7)terraform plan
+8)terraform apply
+9)verify that mtu is changed in vpc
+10)put the terraform code for creation of virtual machine in .tf file
+terrafrom plan
+terraform apply
+verify that vm is created 
+11)add script for firewall creation in main.tf file
+12)put code for new virtual machine creation 
+terraform plan
+terraform apply
+
+13)terraform destroy
+4)
+
+
+Multiple files
+provider.tf  -> about the provider
+network.tf   -> information related to netowrk resources
+compute.tf   -> information related to compute engine
+database.tf  -> information related to databases
+cloudstorage.tf -> information related to cloud storage 
+
+terraform plan
+
+For deployment manager
+first create your yaml file (resource definition file)
+replace [MY_PROJECT] with your actual project id
+gcloud deployment-manager deployments create my-first-deployment --config vm_creation.yaml  
+
+//it will create the respective resources in your gcp console
+
+To clean up your resources from deployment manager
+gcloud deployment-manager deployments delete my-first-deployment
+

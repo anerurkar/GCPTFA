@@ -1,0 +1,108 @@
+park 
+do we have schema conversion tool for db migration
+
+
+Application to cloud sql instance 
+1)using cidr range of application  (public ip of your database)
+2)cloud sql proxy - public mode 
+3)cloud sql proxy - private mode 
+
+public mode -> it will use public ip address of cloud sql instance
+
+
+Employee 
+123
+address column family
+house no : 112
+building name :abc
+society name :
+city : pqr
+state : dummy
+pincode : 723727
+
+jobs_history
+job_id
+job_start_date
+job_end_date
+job_designation
+certfications
+
+
+relational database
+create tables
+queries 
+
+non realtional database
+query pattern
+create tables
+
+
+
+select * from employees where row_key =123
+time series pattern of data
+10.10.10.10 time_11_10 72
+10.10.10.10 time_11_11 74
+10.10.10.10 time_11_12 69
+10.10.10.10 time_11_13 53
+10.10.10.10 time_11_14 84
+
+give me cpu utilization for server 10.10.10.10 between time 11_10 to 11_14
+select * from cpu_utilization where row_key = 10.10.10.10 and time between 11_10 to 11_14
+
+{
+"emp_id" : 123,
+"address_details" : {
+"house_no" : 112,
+"city":
+"state"
+
+},
+"job_history" :{
+
+}
+
+"certification" : {
+
+
+}
+
+}
+
+Searching like Text search
+
+google certification
+
+}
+
+http://104.197.146.80:3000/read
+
+How to connect to cloud sql proxy
+1) wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+
+2)chmod the file permission of cloud sql proxy to execuatble
+chmod u+x cloud_sql_proxy
+
+3)start cloud sql proxy using public mode
+./cloud_sql_proxy -instances=<db_connection_name>=tcp:0.0.0.0:5432
+./cloud_sql_proxy -instances=qwiklabs-gcp-00-cdbb9569a5ae:us-central1:my-postgress-instance=tcp:0.0.0.0:5432
+
+
+4)connect via private mode of sql proxy
+./cloud_sql_proxy -instances=<db_connection_name>=tcp:0.0.0.0:5432 -ip_address_types=PRIVATE
+
+./cloud_sql_proxy -instances=qwiklabs-gcp-00-cdbb9569a5ae:us-central1:my-postgress-instance=tcp:0.0.0.0:5432 -ip_address_types=PRIVATE
+
+
+
+Question and answer
+Anand -> 
+bidhan ->
+jitesh -> 
+manish -> 
+praveen -> 
+//centrally managed password  + centrally managed acl for separate users and separate databases 
+do we have schema conversion tool for db migration
+bare matel database
+Rajeev -> 
+reetesh ->
+satish -> bare matel database 

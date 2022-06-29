@@ -1,0 +1,18 @@
+sensor id -> For each second ,capture the sensor output
+
+column oriented database 
+rowkey -> column1 value
+sensor_123 -> 11:10:00 {who all are pesent in the room}
+sensor_123 -> 11:10:01 {who all are pesent in the room}
+sensor_123 -> 11:10:02 {who all are pesent in the room}
+sensor_123 -> 11:10:03 {who all are pesent in the room}
+sensor_123 -> 11:10:04 {who all are pesent in the room}
+sensor_123 -> 11:10:05 {who all are pesent in the room}
+
+
+time range queries (11:10:01 to 22:10:03) for row key -> sensor_123
+
+
+Auto healing -> property of managed instance group (health check now working at managed instance group)  (instance group one isntance is not running)
+
+

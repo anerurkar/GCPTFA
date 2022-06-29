@@ -1,0 +1,85 @@
+container 
+hello world application (python , module Flask)
+1)create image of my application (container image)
+2)we run the container image (container)
+3)then only u can use your containerised application
+
+
+To create a image 
+docker build -t my_first_docker_app_gke .
+
+To view the docker image 
+docker images
+
+command to create a contianer
+docker run --name my_first_docker_container  -p 4000:3000  -d my_first_docker_app_gke
+
+
+docker run --name  my_first_docker_container1 -p 2000:3000 -d my_first_docker_app_gke
+
+docker run --name  my_first_docker_container2 -p 5000:3000 -d my_first_docker_app_gke_updated
+
+docker run --name  my_first_docker_container3 -p 6000:3000 -d my_first_docker_app_gke
+
+docker run --name  my_first_docker_container4 -p 7000:3000 -d my_first_docker_app_gke
+
+docker run --name  my_first_docker_container5 -p 8000:3000 -d my_first_docker_app_gke
+
+http://localhost:4000/welcome
+
+
+To see all running containers
+docker ps
+docker ps -a (to show me all contianer whether they are running or not alive)
+
+
+docker system prune 
+//to clean dead containers in docker
+
+To view the logs of container 
+docker logs -t  <container_id>
+
+To remove the dead container  
+docker rm <container_id>
+
+how to container information
+docker inspect <container_id>
+
+
+Liveness probe
+
+/alive (return i m alive)
+
+
+Kubernetes works in terms of objects
+POD (running application)
+
+
+Demo 
+1)applcation code given to me  
+2)create a build for my application code
+3)gcr (responsible for holding the images)
+4)deploy application on the gke cluster
+
+
+docker tag kubernetes_first_app gcr.io/qwiklabs-gcp-02-0099ab8a8336/kubernetes_first_app
+
+
+docker push gcr.io/qwiklabs-gcp-02-0099ab8a8336/kubernetes_first_app
+
+
+Command to go inside the pod is 
+kubectl exec -it my-first-app-77856956d-lp69q -- /bin/sh
+kubectl exec -it my-first-app-77856956d-wpxcx -- /bin/sh
+
+
+kubectl apply -f <yaml file> 
+kubectl get pods -o wide    //it will give u more information about mode
+bidhan 
+jitesh
+praveen 
+Ramakanta
+Reetesh
+Satish 
+Sanjay
+taher 

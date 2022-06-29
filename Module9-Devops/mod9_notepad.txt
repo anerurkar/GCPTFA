@@ -1,0 +1,20 @@
+1)kubect apply -f <.yaml>
+
+
+Resource monitoring  (creating dashboards)
+setting up alerts 
+setting up notification channels 
+Logs
+
+
+1)Some VMS are already given to us (nigix)
+2)create custom dashboards
+3)setup uptime checks
+4)verify that alerts are raised properly or not
+
+Command to increase the cpu utilization on virtual machines
+dd if=/dev/urandom | gzip -9 >> /dev/null &
+
+
+
+ 

@@ -1,0 +1,40 @@
+IAM (identity and access management)
+
+Permission 
+(start a virtual machine ) (compute.instance.start)
+(stop a  virtual machine ) (compute.instance.stop)
+(create a storage bucket ) (cloud.storage.create)
+(list the virtual machines ) (respective permission for listing the vms)
+
+
+permissions at a level is union of all permissions givent to its parent + permission givent at its own level
+
+anil folder -> compute engine admin
+anil project -> gke admin access + compute engine admin
+
+
+High level steps for Lab
+1)given two users 
+username 1 (owner role) 
+username 2 (viewer role)
+
+2)From username 1 -> we will create a bucket in cloud storage
+upload files in the bucket that we created
+
+3)from username 2-> we will be able to only view the resources
+(not able to do any kind of edit operation)
+
+4)Remove username 2 from the project  (username 2 shall not able to view the bucket contents)
+
+5)Give a storage object viewer permissions to username 2
+list the contents of the storage buckets
+
+6)create a service account ,we will assign required premssions to service to talk to cloud storage
+
+gsutil ls gs://testing-gcp-bucket-user-permissions
+storage.buckets.list
+
+
+storage.objects.get
+storage.objects.list
+
